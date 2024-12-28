@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/admin_style.css">
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="divMain">
+        <form class="upload_Form" id="uploadForm" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Upload Image</button>
+        </form>
+
+        <div class="images_div" id="imagesContainer">
+            <div class="imageItem">
+                <img class="images_class" src="/image_upload/1.png" alt="Image 1">
+                <button class="deleteBtn" data-image="image_upload/1.png">Delete</button>
+                <img class="images_class" src="/image_upload/2.png" alt="Image 2">
+                <button class="deleteBtn" data-image="image_upload/2.png">Delete</button>
+                <img class="images_class" src="/image_upload/3.png" alt="Image 3">
+                <button class="deleteBtn" data-image="image_upload/3.png">Delete</button>
+                <img class="images_class" src="/image_upload/4.png" alt="Image 4">
+                <button class="deleteBtn" data-image="image_upload/4.png">Delete</button>
+                <img class="images_class" src="/image_upload/5.png" alt="Image 5">
+                <button class="deleteBtn" data-image="image_upload/5.png">Delete</button>
+                <img class="images_class" src="/image_upload/6.png" alt="Image 6">
+                <button class="deleteBtn" data-image="image_upload/6.png">Delete</button>
+                <video class="videos_class" controls>
+                    <source src="/image_upload/7.mp4" type="video/mp4">
+                </video>
+                <button class="deleteBtn" data-image="/image_upload/7.mp4">Delete</button>
+                <br>
+                <br>
+                <br>
+                <h2>update Amazon button</h2>
+                <input type="text" id="urlInput" placeholder="Enter new URL">
+                <button id="updateLinkBtn">Update Link</button>
+                <br>
+                <br>
+                <button id="changeBgButton">Change Background Color</button>
+                <button id="changeToWhiteButton">Change Background to White</button>
+                <br>
+                <br>
+                <h2>update Description text</h2>
+                <textarea id="adminTextarea" rows="4" cols="50"
+                    placeholder="Update description text here..."></textarea>
+                <br>
+                <input type="button" value="Update" onclick="updateDescription()">
+            </div>
+
+
+        </div>
+
+        <script>
+            document.getElementById('updateLinkBtn').addEventListener('click', function () {
+                const input = document.getElementById('urlInput').value.trim();
+
+                if (input && (input.startsWith('http://') || input.startsWith('https://'))) {
+                    // Store the URL in localStorage
+                    localStorage.setItem('updatedLink', input);
+                    alert(`The link has been updated to: ${input}`);
+                } else {
+                    alert('Please enter a valid URL, including "http://" or "https://".');
+                }
+            });
+
+            document.getElementById("changeBgButton").addEventListener("click", function () {
+                localStorage.setItem("bgColor", "#ff2f2f");
+            });
+
+            document.getElementById("changeToWhiteButton").addEventListener("click", function () {
+                // Set background color to white in localStorage
+                localStorage.setItem("bgColor", "white");
+            });
+
+            document.getElementById('uploadForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const formData = new FormData(this);
+
+                fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                        alert(data);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+
+            document.querySelectorAll('.deleteBtn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const imagePath = this.getAttribute('data-image');
+
+                    fetch('/delete', {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ imagePath: imagePath })
+                    })
+                        .then(response => response.text())
+                        .then(data => {
+                            console.log(data);
+                            alert(data);
+
+                            this.parentElement.remove();
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+                });
+            });
+            // Function to update the description
+            async function updateDescription() {
+                const newDescription = document.getElementById('adminTextarea').value;
+
+                try {
+                    const response = await fetch('/update-description', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ newDescription })
+                    });
+
+                    const result = await response.json();
+                    alert(result.message);
+                } catch (error) {
+                    console.error('Error updating description:', error);
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

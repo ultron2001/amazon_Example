@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/index_style.css">
+    <link rel="stylesheet" type="text/scss" href="style/index_style.scss">
+    <title>Amazon</title>
+
+</head>
+
+<body>
+    <div class="main_container">
+
+        <div id="imageModal" class="modal">
+            <div class="modal-content">
+                <img src="image/review1.png" alt="Review 1" class="album-image">
+                <img src="image/review2.png" alt="Review 2" class="album-image">
+                <img src="image/review2.png" alt="Review 3" class="album-image">
+            </div>
+        </div>
+
+        <div id="enlargedImageModal" class="modal enlarged-modal">
+            <img src="" alt="Enlarged View" id="enlargedImage">
+        </div>
+
+        <div class="title_class_div">
+            <img id="title_class" src="image/title.png" alt="">
+        </div>
+
+        <div class="button_Container">
+            <button id="change_color" class="Btn" type="button"><a id="myLink" href="https://example.com"
+                    target="_blank">Amazon</a></button>
+
+            <div class="portfolios_button_Div">
+                <button id="Btn_R_ID" class="Btn_R" type="button">◀</button>
+                <button id="Btn_M_ID" class="Btn_M" type="button">portfolios</button>
+                <button id="Btn_L_ID" class="Btn_L" type="button">▶</button>
+            </div>
+
+            <button class="Btn" type="button" id="showImageBtn">Review</button>
+
+        </div>
+
+        <div class="body_class">
+            <div class="R_body_class">
+                <div class="images_div">
+                    <div class="button-container">
+                        <button id="Btn_image1" class="images_class_btn">
+                            <img class="images_class" src="/image_upload/1.png" alt="Image Button" srcset="">
+                        </button>
+                    </div>
+                    <div class="button-container">
+                        <button id="Btn_image2" class="images_class_btn">
+                            <img class="images_class" src="/image_upload/2.png" alt="Image Button" srcset="">
+                        </button>
+                    </div>
+                    <div class="button-container">
+                        <button id="Btn_image3" class="images_class_btn">
+                            <img class="images_class" src="/image_upload/3.png" alt="Image Button" srcset="">
+                        </button>
+                    </div>
+                    <div class="button-container">
+                        <button id="Btn_image4" class="images_class_btn">
+                            <img class="images_class" src="/image_upload/4.png" alt="Image Button" srcset="">
+                        </button>
+                    </div>
+                    <div class="button-container">
+                        <button id="Btn_image5" class="images_class_btn">
+                            <img class="images_class" src="/image_upload/5.png" alt="Image Button" srcset="">
+                        </button>
+                    </div>
+                    <div class="button-container">
+                        <button id="Btn_image6" class="images_class_btn">
+                            <img class="images_class" src="/image_upload/6.png" alt="Image Button" srcset="">
+                        </button>
+                    </div>
+                    <div class="button-container">
+                        <button id="Btn_image7" class="videos_class_btn">
+                            ▶
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="image-container">
+                <img id="image_display" src="/image_upload/1.png" alt="Product Image" class="zoom-image" />
+
+                <div class="zoom-lens"></div>
+
+                <div id="video-container">
+                    <video controls>
+                        <source src="/image_upload/7.mp4" type="video/mp4">
+
+                    </video>
+                </div>
+            </div>
+            <div class="scroll_class">
+                <div class="Description_div">
+                    <div class="Descripion_text">
+                        <h2 id="Description_text_ID">
+                            DOQAUS Bluetooth Over-ear Headphones,70 Hours Playtime,Wireless Earphones with 3 EQ
+                            Modes,HiFi
+                            Stereo Bluetooth 5.3 Foldable Headphones for Travel,Office,Mobile Phone-Black
+                        </h2>
+                    </div>
+                    <div class="Descripion_Score">
+                        <div class="star-rating">
+                            <input type="radio" id="star5" name="rating" value="5" />
+                            <label for="star5" title="5 stars"></label>
+                            <input type="radio" id="star4" name="rating" value="4" />
+                            <label for="star4" title="4 stars"></label>
+                            <input type="radio" id="star3" name="rating" value="3" />
+                            <label for="star3" title="3 stars"></label>
+                            <input type="radio" id="star2" name="rating" value="2" />
+                            <label for="star2" title="2 stars"></label>
+                            <input type="radio" id="star1" name="rating" value="1" />
+                            <label for="star1" title="1 star"></label>
+                        </div>
+
+                    </div>
+
+                    <div class="Descripion_temporary">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="temporary_class" type="button">temporary
+                            deal</button>
+                    </div>
+                    <div class="Descripion_price">
+                        <h1><samp class="price_text">-15%</samp> <sup>€</sup>25<sup>49</sup></h1>
+                        <h6 class="spaced">Median price: €29.99 </h6>
+                        <h6 class="spaced">Prices include VAT.</h6>
+                        <h6 class="spaced">Median price: €29.99 </h6>
+                        <button class="class_button_color type=" button"><img class="class_image_color"
+                                src="image/1.jpg" alt="">&nbsp;&nbsp;&nbsp;€25,49</button>
+                        <button class="class_button_color type=" button"><img class="class_image_color"
+                                src="image/2.jpg" alt="">&nbsp;&nbsp;&nbsp;€25,49</button>
+                        <button class="class_button_color type=" button"><img class="class_image_color"
+                                src="image/3.jpg" alt="">&nbsp;&nbsp;&nbsp;€25,49</button>
+                        <button class="class_button_color type=" button"><img class="class_image_color"
+                                src="image/4.jpg" alt="">&nbsp;&nbsp;&nbsp;€25,49</button>
+                    </div>
+                    <div class="Descripion_color_commodity">
+                        <h4>Merk<samp style="margin-left: 150px;"></samp>DOQAUS</h4>
+                        <h4>Kleur<samp style="margin-left: 150px;"></samp>ijsgrijs</h4>
+                        <h4>Plaatsing aan oor<samp style="margin-left: 70px;"></samp>Over Oor</h4>
+                        <h4>Vormfactor<samp style="margin-left: 110px;"></samp>Over-ear</h4>
+                        <h4>Geluidscontrole<samp style="margin-left: 80px;"></samp>Geluidsisolatie</h4>
+                        <h4>Koptelefoonaansluiting<samp style="margin-left: 35px;"></samp>3,5 mm jack</h4>
+                        <h4>Modelnaam<samp style="margin-left: 110px;"></samp>Life 5</h4>
+                    </div>
+                    <div class="About_div">
+                        <h3>Over dit item</h3>
+                        <ul>
+                            <li>
+                                Tot 70 uur speeltijd: met tot 70 uur luistertijd van onze over-ear hoofdtelefoon in
+                                bluetooth-modus heb je altijd muziek die je inspireert. Deze draadloze headset kan via
+                                een
+                                3,5 mm audiokabel ook probleemloos met andere niet-bluetooth-apparaten worden verbonden.
+                                Sluit de meegeleverde audiokabel aan om in de bekabelde modus nog langer te horen.
+                            </li>
+                            <li>
+                                Bluetooth 5.3 en geïntegreerde ENC-microfoon: onze overhead-hoofdtelefoon is uitgerust
+                                met
+                                twee 40 mm grote drivereenheden en Bluetooth 5.3-technologie en bieden een stabielere
+                                overdrachtssnelheid, lagere latentie en een betere audio-uitvoer, wat je een prachtig
+                                muziekgenot biedt. De DOQAUS bluetooth-headset beschikt bovendien over een geïntegreerde
+                                ENC-microfoon met helder spraakeffect, compatibel met smartphones voor handsfree bellen
+                                en
+                                gebruik met spraakassistenten. [Opmerking: de microfoon werkt alleen in draadloze
+                                /Bluetooth-modus]
+                            </li>
+                            <li>
+                                Geoptimaliseerde geluidskwaliteit met 3 EQ-modi: de verstelbare Doqaus hoofdtelefoon
+                                beschikt over 3 EQ-modi, die je vrij kunt schakelen tussen normaal
+                                geluidseffect/basgeluidseffect/high-definition geluidseffect. Elke modus biedt je geluid
+                                in
+                                cd-kwaliteit. De draagbare hoofdtelefoon van DOQAUS is altijd up-to-date en zorgt voor
+                                betere geluidseffecten en een betere luisterervaring.
+                            </li>
+                            <li>Gelijktijdige verbinding met twee bluetooth-apparaten maken: onze LIFE 5-headset kan
+                                tegelijkertijd verbinding maken met twee bluetooth-apparaten en naadloos tussen hen
+                                wisselen, dat wil zeggen dat je snel van het luisteren naar een afspeellijst op je
+                                telefoon
+                                kunt schakelen om deel te nemen aan een telefoonconferentie op je laptop.
+                            </li>
+                            <li>
+                                Comfort en ruimtebesparend design: ons ergonomische over-ear design zorgt voor langdurig
+                                comfort, met een rotatie om meerdere hoeken en een opvouwbare structuur voor een goede
+                                pasvorm en uitstekende geluidsisolatie. De verstelbare hoofdband en de draaibare
+                                oorbeschermers passen zich probleemloos aan elke hoofdvorm aan. Of je nu een online
+                                vergadering bijwoont, op reis of tijdens het trainen, je zult bijna vergeten dat je ze
+                                draagt, zelfs na urenlang luisteren
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll_class">
+                <div class="buy_div">
+                    <div class="div_1">
+                        <h3><input type="checkbox">
+                            Ja, ik wil GRATIS bezorging met Amazon Prime
+                        </h3>
+                    </div>
+                    <div class="div_11">
+                        <div class="div_2">
+                            <h1>&nbsp;&nbsp;&nbsp;<sup>€</sup>25<sup>49</sup></h1>
+                        </div>
+                        <div class="div_3">
+                            <p>&nbsp;&nbsp;&nbsp;<a style="color: rgb(0, 155, 207);" href="">GRATIS bezorging</a>
+                                donderdag, <br><samp style="margin-left: 11px;">2 januari. Bestel binnen 2 u 57 m</p>
+                        </div>
+                        <div class="div_4">
+                            &nbsp;&nbsp;&nbsp;
+                            <select class="button_class">
+                                <option value="aa">name list</option>
+                                <option value="a">1</option>
+                                <option value="b">2</option>
+                                <option value="c">3</option>
+                            </select>
+
+                            <button class="button_class_c" type="button">in shopping cart</button>
+
+                            <button class="button_class_b" type="button">Buy Now</button>
+                        </div>
+                        <div class="div_5"></div>
+                        <div class="div_6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>
